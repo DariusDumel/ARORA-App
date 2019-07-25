@@ -51,7 +51,7 @@ public class MindfulnessMeditationGame_R extends AppCompatActivity implements Vi
 
     Vibrator myVibrate;
     MediaPlayer theme_music;
-    //MediaPlayer snap_sound;------------------------------------------------------put back in after you get json
+    MediaPlayer snap_sound;
 
     ImageButton exit_button;
     ImageView arrow;
@@ -86,7 +86,7 @@ public class MindfulnessMeditationGame_R extends AppCompatActivity implements Vi
         pause = findViewById(R.id.pause_button_meditations);
         pause_ring = findViewById(R.id.ring_pause_button_meditations);
 
-        //snap_sound = MediaPlayer.create(MindfulnessMeditationGame_R.this,R.raw.snap_sound_meditation);---------------------------------------------
+        snap_sound = MediaPlayer.create(MindfulnessMeditationGame_R.this,R.raw.snap_sound_meditation);
 
         outer_most_ring = findViewById(R.id.most_outer_ring);
         outer_ring = findViewById(R.id.outer_ring);
@@ -274,7 +274,7 @@ public class MindfulnessMeditationGame_R extends AppCompatActivity implements Vi
     public void onClick(View v) {
         if(animation_start)
         {
-            //snap_sound.start();--------------------------------------------------------------------
+            snap_sound.start();
 
             theme_image.startAnimation(expand);
 
