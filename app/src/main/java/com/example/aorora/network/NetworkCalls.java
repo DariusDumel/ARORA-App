@@ -216,10 +216,10 @@ public class NetworkCalls {
      * @param quest_id
      * @param context
      */
-    public static void createLike( int butterfly_id, int user_id, int quest_id, final Context context)
+    public static void createLike( int user_id, int quest_id , final Context context)
     {
 
-        Call<ButterflyLike> call = service.createLike(butterfly_id, user_id, quest_id);
+        Call<ButterflyLike> call = service.createLike( user_id, quest_id);
     }
 
     /**
@@ -231,7 +231,7 @@ public class NetworkCalls {
     public static void getLike( int butterfly_id, int user_id, int quest_id, final Context context)
     {
 
-        Call<ButterflyLike> call = service.createLike(butterfly_id, user_id, quest_id);
+        //Call<ButterflyLike> call = service.createLike(butterfly_id, user_id, quest_id);
     }
 
     //public static void updateLike(int )

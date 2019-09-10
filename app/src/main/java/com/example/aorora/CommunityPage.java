@@ -45,6 +45,7 @@ import static java.lang.Math.min;
 
 public class CommunityPage extends AppCompatActivity implements View.OnClickListener {
 
+
     private com.example.aorora.adapter.CustomAdapter linearAdapter;
     private com.example.aorora.adapter.GridViewAdapter gridAdapter;
     private RecyclerView recyclerView;
@@ -471,7 +472,6 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
                          }
                      }
         );
-       // Toast.makeText(CommunityPage.this, "There was a problem with enqueue", Toast.LENGTH_SHORT).show();
     }
 
 }

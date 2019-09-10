@@ -36,7 +36,6 @@ public interface GetDataService {
     @POST("/butterflylike")
     @FormUrlEncoded
     Call<ButterflyLike> createLike(//@Path("")//-----not sure if needed, we will find out
-                                   @Field("butterfly_id") Integer butterfly_id,
                                    @Field("user_id") Integer user_id,
                                    @Field("quest_report_id") Integer quest_report_id);
 

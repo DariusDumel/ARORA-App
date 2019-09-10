@@ -7,19 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.aorora.MainActivity;
 import com.example.aorora.R;
-import com.example.aorora.interfaces.OnItemClickListener;
 import com.example.aorora.model.ButterflyLike;
 import com.example.aorora.model.QuestReport;
-import com.example.aorora.interfaces.OnLikeListener;
-import com.jakewharton.picasso.OkHttp3Downloader;
-import com.squareup.picasso.Picasso;
-import com.example.aorora.model.RetroPhoto;
+import com.example.aorora.network.NetworkCalls;
 import com.example.aorora.network.GetDataService;
 import com.example.aorora.network.RetrofitClientInstance;
 
@@ -40,7 +34,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     List<Integer> user_butterfly_types;
     String[] accomplishment_description;
     GetDataService myService;
-    private int indexOfClickedItem = -1;
+    private int indexOfClickedItem = 0;
     //Need to determine which button was pressed inside the specific RecyclerView
     private OnItemClickListener myLikeListener;
 
@@ -71,7 +65,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         TextView time_published;
         ImageView coverImage;
         ImageView like_button;
-        //RelativeLayout rv_rel_layout_like_button;
+        boolean isLiked;
+        int questPlacement;
 
         public CustomViewHolder(View itemView, final OnItemClickListener listener)
         {
@@ -82,6 +77,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             time_published = itemView.findViewById(R.id.time_published_tv);
             coverImage = itemView.findViewById(R.id.coverImage);
             like_button = itemView.findViewById(R.id.like_button);
+
+            if( like_button.getDrawable().equals(R.drawable.heart_filled))
+            {
+                isLiked = true;
+            }
+            else
+            {
+                isLiked = false;
+            }
+
+            questPlacement = -1;
             myService = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
         }
 
@@ -98,11 +104,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             Call<List<ButterflyLike>> myCall = myService.getAllLikes();
             myCall.enqueue(new Callback<List<ButterflyLike>>()
                            {
+
                                @Override
                                public void onResponse(Call<List<ButterflyLike>> call, Response<List<ButterflyLike>> response)
                                {
-                                   boolean isLiked = false;
 
+                                   int questIter;
 
                                    if( like_button.getDrawable().equals(R.drawable.heart_filled))
                                    {
@@ -113,20 +120,20 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
                                    {
                                        final List<ButterflyLike> likeList = response.body();
 
+                                       //Goes through entire list of ButterflyLikes
                                        for( ButterflyLike curLike : likeList)
                                        {
-                                           for( int questReportIter = 0; !isLiked && questReportIter < dataList.size(); questReportIter++)
+                                           for(questIter = 0; questIter < dataList.(); questIter++)
                                            {
                                                //Check to see if user id and the quest report id are found together
-                                               if( !isLiked && ( (curLike.getUser_id() == myUserId)))
+                                               if( !isLiked )
                                                {
-                                                   if( curLike.getQuestReportId() == dataList.get(questReportIter).getQuest_report_id())
+                                                   if( ( (curLike.getUser_id() == myUserId) && curLike.getQuestReportId() == dataList.get(questIter).getQuest_report_id()))
                                                    {
                                                        isLiked = true;
                                                        like_button.setImageResource(R.drawable.heart_filled);
+                                                       questPlacement = questIter;
                                                    }
-
-
                                                }
                                                else
                                                {
@@ -143,9 +150,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
                                @Override
                                public void onFailure(Call<List<ButterflyLike>> call, Throwable t)
                                {
+                                   Log.e("ERROR: ", "There was a problem in receiving likes.");
                                }
                            }
             );
+
+
+            if( isLiked && questPlacement != -1 )
+            {
+
+                NetworkCalls.createLike( myUserId, dataList.get(questPlacement).getQuest_report_id(), like_button.getContext());
+            }
         }
     }
 
@@ -156,15 +171,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         CustomViewHolder holder = new CustomViewHolder( view, myLikeListener);
         return holder;
     }
-/*
-    @Override
-    public void onBindViewHolder(CustomViewHolder holder, final int position, List<Object> payloads)
-    {
 
-    }
-*/
+
+/*-----------Dont
     @Override
-    public void onBindViewHolder(final CustomViewHolder holder, final int position) {
+    public void onBindViewHolder( final CustomViewHolder holder, final int position, List<Object> payloads)
+    {
         String desc = accomplishment_description[quest_type_ids.get(position)-1];
         holder.txtTitle.setText(desc);
         holder.username_tv.setText(usernames.get(position));
@@ -193,13 +205,60 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
                 holder.coverImage.setImageResource(R.drawable.purple_butterfly_image);
                 break;
         }
+
+        //holder.bindItem( position );
+
         holder.like_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 indexOfClickedItem = position;
                 notifyItemChanged( position );
                 holder.bindItem( position );
+            }
+        });
 
+    }
+//*/
+    @Override
+    public void onBindViewHolder(final CustomViewHolder holder, final int position) {
+        String desc = accomplishment_description[quest_type_ids.get(position)-1];
+        //holder.setIsRecyclable(false);
+        holder.txtTitle.setText(desc);
+        holder.username_tv.setText(usernames.get(position));
+        int butterfly_id = user_butterfly_types.get(position);
+        Log.e("Butterfly ID : " , " " + butterfly_id);
+        switch (butterfly_id){
+            case 0:
+                holder.coverImage.setImageResource(R.drawable.orange_butterfly_image);
+                break;
+            case 1:
+                holder.coverImage.setImageResource(R.drawable.blue_butterfly_image);
+                break;
+            case 2:
+                holder.coverImage.setImageResource(R.drawable.red_butterfly_image);
+                break;
+            case 3:
+                holder.coverImage.setImageResource(R.drawable.green_butterfly_image);
+                break;
+            case 4:
+                holder.coverImage.setImageResource(R.drawable.yellow_butterfly_image);
+                break;
+            case 5:
+                holder.coverImage.setImageResource(R.drawable.purple_butterfly_image);
+                break;
+            default:
+                holder.coverImage.setImageResource(R.drawable.purple_butterfly_image);
+                break;
+        }
+
+        //holder.bindItem( position );
+
+        holder.like_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                indexOfClickedItem = position;
+                notifyItemChanged( position );
+                holder.bindItem( position );
             }
         });
 
