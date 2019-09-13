@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ListView;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -20,7 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.aorora.R;
-import com.example.aorora.adapter.CustomAdapter;
+import com.example.aorora.adapter.NotificationListAdapter;
 import com.example.aorora.adapter.GridViewAdapter;
 import com.example.aorora.interfaces.OnLikeListener;
 import com.example.aorora.interfaces.OnItemClickListener;
@@ -48,9 +49,10 @@ import static java.lang.Math.min;
 public class CommunityPage extends AppCompatActivity implements View.OnClickListener {
 
 
-    private com.example.aorora.adapter.CustomAdapter linearAdapter;
+    private com.example.aorora.adapter.NotificationListAdapter linearAdapter;
     private com.example.aorora.adapter.GridViewAdapter gridAdapter;
     private RecyclerView recyclerView;
+    private ListView myListView;
     ProgressDialog progressDoalog;
     ImageButton home_button_bottombar;
     ImageButton profile_button_bottombar;
@@ -81,6 +83,7 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_community_page);
 
         recyclerView = findViewById(R.id.customRecyclerView);
+        myListView = findViewById(R.id.list);
         communityPage = this;
         is_menu_popped = false;
         progressDoalog = new ProgressDialog(communityPage);

@@ -386,8 +386,8 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
         {
             to_navigate = new Intent(homeScreen, DailyQuestPage.class);
             startActivity(to_navigate);
-            //Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.NAUVRLab.ARProduct");
-            //startActivity(launchIntent);
+            Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.NAUVRLab.ARProduct");
+            startActivity(launchIntent);
         }
 
     }
