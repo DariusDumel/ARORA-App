@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ListView;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -20,7 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.aorora.R;
-import com.example.aorora.adapter.CustomAdapter;
+import com.example.aorora.adapter.NotificationListAdapter;
 import com.example.aorora.adapter.GridViewAdapter;
 import com.example.aorora.interfaces.OnLikeListener;
 import com.example.aorora.interfaces.OnItemClickListener;
@@ -46,9 +47,10 @@ import static java.lang.Math.min;
 public class CommunityPage extends AppCompatActivity implements View.OnClickListener {
 
 
-    private com.example.aorora.adapter.CustomAdapter linearAdapter;
+    private com.example.aorora.adapter.NotificationListAdapter linearAdapter;
     private com.example.aorora.adapter.GridViewAdapter gridAdapter;
     private RecyclerView recyclerView;
+    private ListView myListView;
     ProgressDialog progressDoalog;
     ImageButton home_button_bottombar;
     ImageButton profile_button_bottombar;
@@ -78,6 +80,7 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_community_page);
 
         recyclerView = findViewById(R.id.customRecyclerView);
+        myListView = findViewById(R.id.list);
         communityPage = this;
         is_menu_popped = false;
         progressDoalog = new ProgressDialog(communityPage);
@@ -186,11 +189,11 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
                                         List<Integer> user_butterfly_types)
     {
 
-        linearAdapter = new CustomAdapter( this, questList, quest_type_ids, usernames, user_butterfly_types,
+        linearAdapter = new NotificationListAdapter( this, questList, quest_type_ids, usernames, user_butterfly_types,
                                                                      getResources().getStringArray(R.array.mindfulness_description) );
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(CommunityPage.this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(linearAdapter);
+       // RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(CommunityPage.this);
+       // recyclerView.setLayoutManager(layoutManager);
+        myListView.setAdapter(linearAdapter);
 
        /* linearAdapter.setOnItemClickListener(new CustomAdapter.OnItemClickListener(){
             @Override
@@ -338,7 +341,6 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
                     for (int i = questReportList.size()-1; i >= 0; i--)
                     {
                         holder.setQuest_type(questReportList.get(i).getQuest_type_id());
-
                         getUserInfo(questReportList.get(i).getUser_id());
                     }
 

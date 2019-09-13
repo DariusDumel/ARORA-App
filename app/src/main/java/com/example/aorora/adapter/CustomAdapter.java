@@ -123,7 +123,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
                                        //Goes through entire list of ButterflyLikes
                                        for( ButterflyLike curLike : likeList)
                                        {
-                                           for(questIter = 0; questIter < dataList.(); questIter++)
+                                           for(questIter = 0; questIter < dataList.size(); questIter++)
                                            {
                                                //Check to see if user id and the quest report id are found together
                                                if( !isLiked )

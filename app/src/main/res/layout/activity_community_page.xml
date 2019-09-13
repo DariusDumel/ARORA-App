@@ -114,6 +114,15 @@
 
     </android.support.v7.widget.RecyclerView>
 
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/community_page_line_ll"
+        android:layout_above="@+id/three_dots_left"
+        />
+
+
     <ImageView
 
         android:id="@+id/three_dots_left"
