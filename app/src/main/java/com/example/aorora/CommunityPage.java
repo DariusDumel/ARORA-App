@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -125,6 +126,7 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setOnTouchListener(touchListener);
+        myListView.setOnTouchListener(touchListener);
 
         popup_menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,7 +189,7 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
     };
 
     /*Method to generate List of data using RecyclerView with custom adapter*/
-    private void generateDataListLinear(List<QuestReport> questList,
+    private void generateDataListLinear(final List<QuestReport> questList,
                                         List<Integer> quest_type_ids,
                                         List<String> usernames,
                                         List<Integer> user_butterfly_types)
@@ -370,7 +372,7 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
                 }
                 else
                 {
-                    Toast.makeText(CommunityPage.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CommunityPage.this, "Something went wrong with Quest Call", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -390,15 +392,14 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
             @Override
             public void onResponse(Call<UserInfo> call, Response<UserInfo> response) {
                 if(response.isSuccess())
-                //response.body().getUsername()
                 {
                     String u_name = response.body().getUser_name();
                     if(u_name == null)
                     {
-                        Log.e("NULLLLLLL", " USERNAME IS NOT AVAILABLE" );
+                        Log.e("NULL   ", " USERNAME IS NOT AVAILABLE" );
                         Toast.makeText(CommunityPage.this, "User Name is not available", Toast.LENGTH_SHORT).show();
                     }
-                    Log.e("USERNAMES!!!!!!!!!!!!!", " " + u_name);
+                    Log.e("USERNAME", " " + u_name);
                     int u_b_id = response.body().getUser_current_butterfly();
 
 
@@ -408,7 +409,7 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
                 }
                 else
                 {
-                    Toast.makeText(CommunityPage.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CommunityPage.this, "Problem with calling user info", Toast.LENGTH_SHORT).show();
                 }
             }
 
