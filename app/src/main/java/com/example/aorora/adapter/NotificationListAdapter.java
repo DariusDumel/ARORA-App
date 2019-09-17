@@ -35,7 +35,7 @@ public class NotificationListAdapter extends ArrayAdapter<QuestReport> implement
                                     List<Integer> user_butterfly_types,
                                     String[] accomplishment_description
     ){
-        super( context, R.layout.custom_comments_row/*, dataList*/);
+        super( context, R.layout.custom_comments_row, R.id.CommentTextView, dataList);
         this.myContext = context;
         this.dataList = dataList;
         this.quest_type_ids = quest_type_ids;
