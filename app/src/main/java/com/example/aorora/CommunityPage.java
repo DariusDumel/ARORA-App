@@ -50,7 +50,7 @@ import static java.lang.Math.min;
 public class CommunityPage extends AppCompatActivity implements View.OnClickListener {
 
 
-    private com.example.aorora.adapter.NotificationListAdapter linearAdapter;
+    private static com.example.aorora.adapter.NotificationListAdapter linearAdapter;
     private com.example.aorora.adapter.GridViewAdapter gridAdapter;
     private RecyclerView recyclerView;
     private ListView myListView;
@@ -83,7 +83,7 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community_page);
 
-        recyclerView = findViewById(R.id.customRecyclerView);
+       // recyclerView = findViewById(R.id.customRecyclerView);
         myListView = findViewById(R.id.list);
         communityPage = this;
         is_menu_popped = false;
@@ -221,8 +221,8 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
             }
         });
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 3);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(gridAdapter);
+        //recyclerView.setLayoutManager(layoutManager);
+       // recyclerView.setAdapter(gridAdapter);
     }
 
     @Override
