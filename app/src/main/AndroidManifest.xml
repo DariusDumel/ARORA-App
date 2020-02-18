@@ -23,9 +23,8 @@
         android:supportsRtl="true"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity android:name=".AR_Main" ></activity>>
+        <activity android:name=".AR_Main" ></activity>
         <activity android:name=".MindfulnessMeditationGame_R" />
-        !**activity android:name=".MindfulnessMeditationGame_R" />
         <activity android:name=".ReceiptPage" />
         <activity android:name=".EndOfMindfulnessGamePage" />
         <activity android:name=".PollenStoreDailyQuestPage" />
