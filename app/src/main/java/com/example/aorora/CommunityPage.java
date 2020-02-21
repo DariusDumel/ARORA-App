@@ -349,6 +349,7 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
                     //reverses through the notification list to get the top 20 easier
                     for (int i = NotificationList.size()-1; i >= 0; i--)
                     {
+                        //adds the interaction type of the notif incrementally in the function, not just one type for the entire list
                         communityHolder.setInteraction_type(NotificationList.get(i).getNotification_type_id());
 
                         getUserInfo(NotificationList.get(i).getNotification_user_id());
