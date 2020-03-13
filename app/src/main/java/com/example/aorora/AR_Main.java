@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.content.Intent;
 import com.google.ar.core.Session;
+import com.google.ar.sceneform.animation.ModelAnimator;
+import com.google.ar.sceneform.rendering.AnimationData;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 
@@ -25,6 +27,8 @@ import java.util.Random;
 
 public class AR_Main extends AppCompatActivity  {
     final Handler handler = new Handler();
+    private ModelAnimator modelAnimator;
+    private int i;
     private Session session;
     private ArFragment arFragment;
     private Scene scene;
@@ -214,7 +218,7 @@ public class AR_Main extends AppCompatActivity  {
 
         ModelRenderable
                 .builder()
-                .setSource(this, Uri.parse("Butterfly_01.sfb"))
+                .setSource(this, Uri.parse("animButterfly_noMask01.sfb"))
                 .build()
                 .thenAccept(renderable -> {
 
@@ -246,13 +250,30 @@ public class AR_Main extends AppCompatActivity  {
 
 
                     }
-
+                    animateModel(renderable);
                 });
 
     }
 
-    private void onClick(View view) {
-        slideQuest();
-    }
+    private void animateModel(ModelRenderable renderable)
+    {
+        if(modelAnimator != null && modelAnimator.isRunning())
+            modelAnimator.end();
+        int animationCount = renderable.getAnimationDataCount();
 
+        if(i== animationCount)
+        {
+            i = 0;
+        }
+
+        AnimationData animationData = renderable.getAnimationData(i);
+        modelAnimator = new ModelAnimator(animationData, renderable);
+        modelAnimator.start();
+        i++;
+
+        if(i==0)
+        {
+            animateModel(renderable);
+        }
+    }
 }
