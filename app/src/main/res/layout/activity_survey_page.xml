@@ -46,6 +46,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/survey_question_tv">
 
+        <!--app:srcCompat="@drawable/red_butterfly_button"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="543dp"--> />
+
         <ImageButton
             android:id="@+id/red_mood_button"
             android:layout_width="68dp"
@@ -53,10 +57,8 @@
             android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#00000000"
-            android:scaleType="fitCenter"/>
-            <!--app:srcCompat="@drawable/red_butterfly_button"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="543dp"--> />
+            android:scaleType="fitCenter"
+            android:src="@drawable/start_greatbutton" />
 
         <ImageButton
             android:id="@+id/darkorange_mood_button"
@@ -66,6 +68,7 @@
             android:layout_weight="1"
             android:background="#00000000"
             android:scaleType="fitCenter"
+            android:src="@drawable/start_goodbutton"
             tools:layout_editor_absoluteX="92dp"
             tools:layout_editor_absoluteY="543dp" />
         <!--app:srcCompat="@drawable/darkorange_butterfly_button"-->
@@ -78,6 +81,7 @@
             android:layout_weight="1"
             android:background="#00000000"
             android:scaleType="fitCenter"
+            android:src="@drawable/start_okbutton"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="543dp" />
         <!--app:srcCompat="@drawable/orange_butterfly_button"-->
@@ -90,6 +94,7 @@
             android:layout_weight="1"
             android:background="#00000000"
             android:scaleType="fitCenter"
+            android:src="@drawable/start_badbutton"
             tools:layout_editor_absoluteX="246dp"
             tools:layout_editor_absoluteY="543dp" />
         <!--app:srcCompat="@drawable/yellow_butterflu_button"-->
@@ -102,6 +107,7 @@
             android:layout_weight="1"
             android:background="#00000000"
             android:scaleType="fitCenter"
+            android:src="@drawable/start_terriblebutton"
             tools:layout_editor_absoluteX="327dp"
             tools:layout_editor_absoluteY="543dp" />
         <!--app:srcCompat="@drawable/green_butterfly_button"-->
@@ -127,9 +133,11 @@
         android:layout_width="311dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
