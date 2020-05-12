@@ -33,13 +33,13 @@ public class SurveyPage extends AppCompatActivity implements OnClickListener {
     Context surveyPage;
     Animation move_to_animation;
     Animation move_from_animation;
-    ImageButton red_mood_button;
-    ImageButton darkorange_mood_button;
-    ImageButton orange_mood_button;
-    ImageButton  yellow_mood_button;
-    ImageButton green_mood_button;
+    Button red_mood_button;
+    Button darkorange_mood_button;
+    Button orange_mood_button;
+    Button  yellow_mood_button;
+    Button green_mood_button;
     TextView survey_question_tv;
-    ImageButton exitButton;
+    Button exitButton;
     String[] questions = {"What is your mood today?","What is your stress level?"};
     final int questions_array_size = 2;
     int question_order_count;
@@ -52,18 +52,18 @@ public class SurveyPage extends AppCompatActivity implements OnClickListener {
         setContentView(R.layout.activity_survey_page);
 
         //Initialization
-        red_mood_button = (ImageButton) findViewById(R.id.red_mood_button);
-        darkorange_mood_button = (ImageButton) findViewById(R.id.darkorange_mood_button);
-        orange_mood_button = (ImageButton) findViewById(R.id.orange_mood_button);
-        yellow_mood_button = (ImageButton) findViewById(R.id.yellow_mood_button);
-        green_mood_button = (ImageButton) findViewById(R.id.green_mood_button);
+        red_mood_button = findViewById(R.id.red_mood_button);
+        darkorange_mood_button = findViewById(R.id.darkorange_mood_button);
+        orange_mood_button = findViewById(R.id.orange_mood_button);
+        yellow_mood_button = findViewById(R.id.yellow_mood_button);
+        green_mood_button = findViewById(R.id.green_mood_button);
         survey_question_tv = findViewById(R.id.survey_question_tv);
         question_order_count = 0;
         survey_question_tv.setText(questions[question_order_count]);
         surveyPage = this;
         mood_desc_ll = findViewById(R.id.mood_desc_ll);
         mood_desc_stress = findViewById(R.id.mood_desc_stress);
-        exitButton = (ImageButton) findViewById(R.id.exit_button_survey);
+        exitButton =  findViewById(R.id.exit_button_survey);
 
         mood_desc_ll.setVisibility(View.INVISIBLE);
         mood_desc_stress.setVisibility(View.INVISIBLE);

@@ -80,7 +80,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         TextView time_published;
         ImageView coverImage;
         ImageView like_button;
-        //RelativeLayout rv_rel_layout_like_button;
 
         public CustomViewHolder(View itemView, final OnLikeListener listener)
         {
@@ -88,7 +87,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
             txtTitle = itemView.findViewById(R.id.notification_content_tv);
             username_tv = itemView.findViewById(R.id.user_name_notification_tv);
-            time_published = itemView.findViewById(R.id.time_published_tv);
             coverImage = itemView.findViewById(R.id.coverImage);
             like_button = itemView.findViewById(R.id.like_button);
             myService = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);

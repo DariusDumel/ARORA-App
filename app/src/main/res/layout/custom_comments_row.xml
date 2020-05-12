@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="5dp"
@@ -25,9 +26,9 @@
             style="@style/Base.Animation.AppCompat.DropDownUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/coverImage"
+            android:layout_marginLeft="7dp"
             android:layout_marginTop="7dp"
+            android:layout_toRightOf="@+id/coverImage"
             android:lines="1"
             android:text="FancyNancy33"
             android:textColor="#FFFFFF"
@@ -38,33 +39,23 @@
             style="@style/Base.Animation.AppCompat.DropDownUp"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="38dp"
             android:layout_toRightOf="@id/user_name_notification_tv"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="7dp"
             android:lines="2"
             android:text="Notifications will pop up here"
             android:textColor="@color/customGray"
             android:textSize="6pt" />
 
-        <TextView
-            android:id="@+id/time_published_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/coverImage"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="2dp"
-            android:text="12m"
-            android:textColor="@color/customGray"
-            android:textSize="4pt" />
-
         <Button
             android:id="@+id/comment_button"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_below="@id/notification_content_tv"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_toRightOf="@id/time_published_tv"
+            android:layout_below="@+id/user_name_notification_tv"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/coverImage"
             android:background="#00000000"
             android:text="Comment"
             android:textColor="@color/customGray"
@@ -74,22 +65,21 @@
             android:id="@+id/try_exercise_button"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_below="@id/notification_content_tv"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/comment_button"
             android:background="#00000000"
             android:text="Try Exercise!"
             android:textColor="@color/customGray"
-            android:textSize="6pt" />
+            android:textSize="6pt"
+            android:visibility="invisible"
+            tools:visibility="invisible" />
 
         <ImageView
             android:id="@+id/like_button"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="11dp"
+            android:layout_marginEnd="1dp"
             android:src="@drawable/heart_unfilled" />
 
     </RelativeLayout>

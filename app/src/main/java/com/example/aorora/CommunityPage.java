@@ -459,7 +459,8 @@ public class CommunityPage extends AppCompatActivity implements View.OnClickList
                                  for (Notification curLike : likeList)
                                  {
                                      /**
-                                     if (!isLiked && ((curLike.getQuest_record_id() == 3) && (curLike.getQuest_record_id() == linearAdapter.getItemQuestId(myPosition))))
+                                     if (!isLiked && ((curLike.getQuest_record_id() == 3) && (curLike.getQuest_record_id()
+                                            == linearAdapter.getItemQuestId(myPosition))))
                                      {
                                          //Check to see if user id and the quest report id are found together
                                          Log.e("FOUND_L COM", " Found the butterfly like, will remove.");

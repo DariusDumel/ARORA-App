@@ -4,45 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SurveyPage"
     android:background="@drawable/background"
-    >
-
-    <ImageView
-        android:id="@+id/user_butterfly_imageView"
-        android:layout_width="255dp"
-        android:layout_height="234dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/orange_butterfly_image" />
+    tools:context=".SurveyPage">
 
     <TextView
         android:id="@+id/survey_question_tv"
-        android:layout_width="317dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:text="How are you feeling?"
+        android:text="How are you feeling today?"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="8pt"
+        android:textSize="12pt"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="313dp"
-        android:layout_height="76dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/exit_button_survey"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/survey_question_tv">
 
@@ -50,17 +39,17 @@
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="543dp"--> />
 
-        <ImageButton
+        <Button
             android:id="@+id/red_mood_button"
             android:layout_width="68dp"
-            android:layout_height="68dp"
+            android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#00000000"
             android:scaleType="fitCenter"
-            android:src="@drawable/start_greatbutton" />
+            android:src="@drawable/ic_startgreatbutton" />
 
-        <ImageButton
+        <Button
             android:id="@+id/darkorange_mood_button"
             android:layout_width="68dp"
             android:layout_height="68dp"
@@ -68,12 +57,12 @@
             android:layout_weight="1"
             android:background="#00000000"
             android:scaleType="fitCenter"
-            android:src="@drawable/start_goodbutton"
+            android:src="@drawable/ic_startgoodbutton"
             tools:layout_editor_absoluteX="92dp"
             tools:layout_editor_absoluteY="543dp" />
         <!--app:srcCompat="@drawable/darkorange_butterfly_button"-->
 
-        <ImageButton
+        <Button
             android:id="@+id/orange_mood_button"
             android:layout_width="68dp"
             android:layout_height="68dp"
@@ -81,12 +70,12 @@
             android:layout_weight="1"
             android:background="#00000000"
             android:scaleType="fitCenter"
-            android:src="@drawable/start_okbutton"
+            android:src="@drawable/ic_startokbutton"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="543dp" />
         <!--app:srcCompat="@drawable/orange_butterfly_button"-->
 
-        <ImageButton
+        <Button
             android:id="@+id/yellow_mood_button"
             android:layout_width="68dp"
             android:layout_height="68dp"
@@ -94,141 +83,35 @@
             android:layout_weight="1"
             android:background="#00000000"
             android:scaleType="fitCenter"
-            android:src="@drawable/start_badbutton"
+            android:src="@drawable/ic_startbadbutton"
             tools:layout_editor_absoluteX="246dp"
             tools:layout_editor_absoluteY="543dp" />
         <!--app:srcCompat="@drawable/yellow_butterflu_button"-->
 
-        <ImageButton
+        <Button
             android:id="@+id/green_mood_button"
             android:layout_width="68dp"
-            android:layout_height="68dp"
+            android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#00000000"
             android:scaleType="fitCenter"
-            android:src="@drawable/start_terriblebutton"
+            android:src="@drawable/ic_startterriblebutton"
             tools:layout_editor_absoluteX="327dp"
             tools:layout_editor_absoluteY="543dp" />
+
         <!--app:srcCompat="@drawable/green_butterfly_button"-->
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/exit_button_survey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="8dp"
-        android:text="Take the Quick BaseLine Survey"
-        android:textColor="#FFFFFF"
-        android:textSize="8pt"
+        android:layout_marginBottom="48dp"
+        android:text="Skip Survey"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_butterfly_imageView" />
-
-    <LinearLayout
-        android:id="@+id/mood_desc_ll"
-        android:layout_width="311dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <TextView
-            android:id="@+id/mood_desc_tv_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:gravity="start"
-            android:text="Pleasant"
-            android:textColor="#989898" />
-
-        <TextView
-            android:id="@+id/mood_desc_tv_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:text="Neither pleasant nor unpleasant"
-            android:textColor="#989898" />
-
-        <TextView
-            android:id="@+id/mood_desc_tv_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:gravity="end"
-            android:text="Unpleasant"
-            android:textColor="#989898"
-
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/mood_desc_stress"
-        android:layout_width="311dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <TextView
-            android:id="@+id/mood_desc_stress_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:gravity="start"
-            android:text="Very calm"
-            android:textColor="#989898" />
-
-        <TextView
-            android:id="@+id/mood_desc_stress_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:text="Neither calm nor tense"
-            android:textColor="#989898" />
-
-        <TextView
-            android:id="@+id/mood_desc_stress_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:gravity="end"
-            android:text="Tense"
-            android:textColor="#989898"
-
-            />
-    </LinearLayout>
-
-    <ImageButton
-        android:id="@+id/exit_button_survey"
-        android:layout_width="25dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="#00000000"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/exit_button_breathing"
-        android:visibility="invisible"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
