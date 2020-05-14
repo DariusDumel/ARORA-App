@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -8,38 +9,40 @@
 
 
     <ImageButton
-        android:id="@+id/community_button_bottom_bar"
+        android:id="@+id/home_button_bottom_bar"
         android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="#00000000"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/community_button_unfilled" />
+        app:srcCompat="@drawable/ic_main_menu_home" />
+
+    <ImageButton
+        android:id="@+id/community_button_bottom_bar"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        tools:srcCompat="@drawable/ic_main_menu_messages" />
 
     <ImageButton
         android:id="@+id/profile_button_bottom_bar"
         android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="#00000000"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/profile_button_unfilled" />
-    <ImageButton
-        android:id="@+id/home_button_bottom_bar"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_weight="1"
-        android:background="#00000000"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/home_button_unfilled" />
+        app:srcCompat="@drawable/profile_button_unfilled"
+        tools:srcCompat="@drawable/ic_main_menu_profile" />
 
     <ImageButton
         android:id="@+id/quest_button_bottom_bar"
         android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:background="#00000000"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/quest_button_unfilled"
-        android:background="#00000000"
-        />
+        tools:srcCompat="@drawable/ic_main_menu_atrium" />
 </LinearLayout>

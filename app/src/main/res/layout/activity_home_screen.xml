@@ -9,6 +9,13 @@
     tools:context=".HomeScreen"
     android:id="@+id/speck_holder_cl">
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.26" />
+
     <include
         android:id="@+id/include_popup_quick_access_menu"
         layout="@layout/quick_access_menu"
@@ -24,7 +31,7 @@
 
     <ImageView
         android:id="@+id/user_butterfly_imageView"
-        android:layout_width="255dp"
+        android:layout_width="wrap_content"
         android:layout_height="234dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="160dp"
@@ -32,39 +39,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/orange_butterfly_image" />
-
-    <ImageButton
-        android:id="@+id/pop_up_buttons_button"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="104dp"
-        android:background="#00000000"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/menu_button_filled" />
-
-    <ImageView
-        android:id="@+id/three_dots_middle"
-        android:layout_width="43dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/include"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/dots_middle" />
+        app:srcCompat="@drawable/ic_main_large_icon" />
 
     <include
         android:id="@+id/include"
         layout="@layout/bottom_menu_bar"
         android:layout_width="match_parent"
-        android:layout_height="22dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
@@ -74,59 +55,138 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
+        android:id="@+id/ar_game_button_ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ar_game_button_ll"
-        app:layout_constraintBottom_toTopOf="@+id/pop_up_buttons_button"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
         android:orientation="vertical"
-        android:layout_marginBottom="60dp"
-        android:gravity="center">
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.711"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_butterfly_imageView">
+
         <ImageButton
             android:id="@+id/ar_game_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#00000000"
             android:scaleType="fitCenter"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/ar_button"/>
+            android:visibility="visible"
+            app:srcCompat="@drawable/ar_button"
+            tools:srcCompat="@drawable/ic_main_ar_icon" />
+
         <TextView
             android:id="@+id/label_ar_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AR Game"
             android:layout_marginTop="4dp"
-            android:visibility="invisible"
-            android:textColor="@color/customGray"/>
+            android:text="ARORA AR"
+            android:textColor="@color/customGray"
+            android:visibility="visible" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/quest_breathing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/quest_button_ll"
-        app:layout_constraintBottom_toTopOf="@+id/pop_up_buttons_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        android:layout_marginBottom="52dp"
+        android:gravity="center"
         android:orientation="vertical"
-        android:layout_marginBottom="60dp"
-        android:gravity="center">
+        app:layout_constraintBottom_toTopOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/quest_walking"
+        app:layout_constraintVertical_bias="0.6">
+
         <ImageButton
-            android:id="@+id/quest_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:id="@+id/quest_breathing_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#00000000"
             android:scaleType="fitCenter"
             android:visibility="invisible"
-            app:srcCompat="@drawable/quest_button" />
+            app:srcCompat="@drawable/quest_button"
+            tools:srcCompat="@drawable/ic_main_walking_icon"
+            tools:visibility="visible" />
+
         <TextView
+            android:id="@+id/label_quest_breathing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quest"
             android:layout_marginTop="4dp"
-            android:visibility="invisible"
-            android:id="@+id/label_quest_button"
-            android:textColor="@color/customGray"/>
+            android:text="Walking"
+            android:textColor="@color/customGray"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/quest_Meditation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ar_game_button_ll"
+        app:layout_constraintVertical_bias="0.618">
+
+        <ImageButton
+            android:id="@+id/quest_meditation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:visibility="visible"
+            app:srcCompat="@drawable/quest_button"
+            tools:srcCompat="@drawable/ic_main_meditation_icon" />
+
+        <TextView
+            android:id="@+id/label_quest_meditation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Meditation"
+            android:textColor="@color/customGray"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/quest_walking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.429"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/user_butterfly_imageView">
+
+        <ImageButton
+            android:id="@+id/quest_walking_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:visibility="visible"
+            app:srcCompat="@drawable/quest_button"
+            tools:srcCompat="@drawable/ic_main_breathing_icon" />
+
+        <TextView
+            android:id="@+id/label_quest_walking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Breathing"
+            android:textColor="@color/customGray"
+            android:visibility="visible" />
 
     </LinearLayout>
 
@@ -165,15 +225,5 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.50121653" />
-
-    <include
-        android:id="@+id/popup_quick_access"
-        layout="@layout/pollen_score_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

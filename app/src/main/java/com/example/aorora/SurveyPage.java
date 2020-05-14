@@ -28,8 +28,8 @@ import android.widget.Toast;
 import com.example.aorora.network.NetworkCalls;
 
 public class SurveyPage extends AppCompatActivity implements OnClickListener {
-    LinearLayout mood_desc_ll;
-    LinearLayout mood_desc_stress;
+    /*LinearLayout mood_desc_ll;
+    LinearLayout mood_desc_stress;*/
     Context surveyPage;
     Animation move_to_animation;
     Animation move_from_animation;
@@ -61,12 +61,12 @@ public class SurveyPage extends AppCompatActivity implements OnClickListener {
         question_order_count = 0;
         survey_question_tv.setText(questions[question_order_count]);
         surveyPage = this;
-        mood_desc_ll = findViewById(R.id.mood_desc_ll);
-        mood_desc_stress = findViewById(R.id.mood_desc_stress);
+//        mood_desc_ll = findViewById(R.id.mood_desc_ll);
+//        mood_desc_stress = findViewById(R.id.mood_desc_stress);
         exitButton =  findViewById(R.id.exit_button_survey);
 
-        mood_desc_ll.setVisibility(View.INVISIBLE);
-        mood_desc_stress.setVisibility(View.INVISIBLE);
+//        mood_desc_ll.setVisibility(View.INVISIBLE);
+//        mood_desc_stress.setVisibility(View.INVISIBLE);
         survey_question_tv.setVisibility(View.INVISIBLE);
         red_mood_button.setVisibility(View.INVISIBLE);
         darkorange_mood_button.setVisibility(View.INVISIBLE);
@@ -105,7 +105,7 @@ public class SurveyPage extends AppCompatActivity implements OnClickListener {
                 orange_mood_button.setVisibility(View.VISIBLE);
                 yellow_mood_button.setVisibility(View.VISIBLE);
                 green_mood_button.setVisibility(View.VISIBLE);
-                mood_desc_ll.setVisibility(View.VISIBLE);
+//                mood_desc_ll.setVisibility(View.VISIBLE);
                // mood_desc_stress.setVisibility(View.VISIBLE);
 
 
@@ -184,7 +184,7 @@ public class SurveyPage extends AppCompatActivity implements OnClickListener {
             @Override
             public void onAnimationEnd(Animation animation) {
                 survey_question_tv.setText(questions[question_order_count]);
-                if(question_order_count == 0)
+               /* if(question_order_count == 0)
                 {
                     mood_desc_ll.setVisibility(View.VISIBLE);
                 }
@@ -192,7 +192,7 @@ public class SurveyPage extends AppCompatActivity implements OnClickListener {
                 {
                     mood_desc_ll.setVisibility(View.INVISIBLE);
                     mood_desc_stress.setVisibility(View.VISIBLE);
-                }
+                }*/
                 survey_question_tv.startAnimation(move_from_animation);
             }
 

@@ -73,7 +73,7 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
         community_button_bottombar = (ImageButton) findViewById(R.id.community_button_bottom_bar);
         quest_button_bottombar = (ImageButton) findViewById(R.id.quest_button_bottom_bar);
         ar_game_button = (ImageButton) findViewById(R.id.ar_game_button);
-        quest_button = (ImageButton) findViewById(R.id.quest_button);
+        quest_button = (ImageButton) findViewById(R.id.quest_breathing_button);
         pop_up_twobuttons_button = findViewById(R.id.pop_up_buttons_button);
         profile_butterfly = (ImageView) findViewById(R.id.user_butterfly_imageView);
         label_ar_game_button = (TextView) findViewById(R.id.label_ar_button);
