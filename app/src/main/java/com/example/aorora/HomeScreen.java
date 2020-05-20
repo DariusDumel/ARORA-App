@@ -73,16 +73,13 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
         quest_button_bottombar = (ImageButton) findViewById(R.id.quest_button_bottom_bar);
         ar_game_button = (ImageButton) findViewById(R.id.ar_game_button);
         quest_button = (ImageButton) findViewById(R.id.quest_breathing_button);
-       // pop_up_twobuttons_button = findViewById(R.id.pop_up_buttons_button);
         profile_butterfly = (ImageView) findViewById(R.id.user_butterfly_imageView);
         label_ar_game_button = (TextView) findViewById(R.id.label_ar_button);
-//        label_quest_button = (TextView) findViewById(R.id.label_quest_button);
         popup_quick_access = (LinearLayout) findViewById(R.id.popup_quick_access);
         speck_holder_cl = (ConstraintLayout) findViewById(R.id.speck_holder_cl);
         quick_menu = (LinearLayout) findViewById(R.id.include_popup_quick_access_menu);
         is_menu_inflated = false;
 
-        //buttonClick = MediaPlayer.create(getBaseContext(), R.raw.button1);
 
 
         quick_menu.setOnClickListener(new View.OnClickListener() {

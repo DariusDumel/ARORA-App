@@ -111,7 +111,7 @@
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/quest_walking"
-        app:layout_constraintVertical_bias="0.31">
+        app:layout_constraintVertical_bias="0.316">
 
         <ImageButton
             android:id="@+id/quest_breathing_button"
@@ -119,7 +119,7 @@
             android:layout_height="wrap_content"
             android:background="#00000000"
             android:scaleType="fitCenter"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:srcCompat="@drawable/quest_button"
             tools:srcCompat="@drawable/ic_main_walking_icon"
             tools:visibility="visible" />
