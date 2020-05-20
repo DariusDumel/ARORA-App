@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.content.Intent;
 import com.google.ar.core.Session;
+import com.google.ar.sceneform.animation.AnimationEngine;
 import com.google.ar.sceneform.animation.ModelAnimator;
 import com.google.ar.sceneform.rendering.AnimationData;
 import com.google.ar.sceneform.rendering.ModelRenderable;
@@ -24,6 +25,8 @@ import com.google.ar.sceneform.Scene;
 import com.google.ar.sceneform.math.Vector3;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class AR_Main extends AppCompatActivity  {
     final Handler handler = new Handler();
@@ -103,6 +106,28 @@ public class AR_Main extends AppCompatActivity  {
             questText.setVisibility(TextView.VISIBLE);
             questText.setSelected(true);
         }
+    }
+
+
+    Handler handler_butterfly = new Handler();
+    Runnable runnable;
+    int delay = 5000; //Delay for 15 seconds.  One second = 1000 milliseconds.
+    protected void onResume(ModelRenderable renderable) {
+        //start handler as activity become visible
+        handler_butterfly.postDelayed( runnable = new Runnable() {
+            public void run() {
+                animateModel(renderable);
+                handler_butterfly.postDelayed(runnable, delay);
+            }
+        }, delay);
+        super.onResume();
+    }
+
+
+    @Override
+    protected void onPause() {
+        handler_butterfly.removeCallbacks(runnable); //stop handler when activity not visible
+        super.onPause();
     }
 
     public void slideMessages()
@@ -191,28 +216,11 @@ public class AR_Main extends AppCompatActivity  {
         }
     }
 
-
-
-    public void butterflyInventory()
+    public void update()
     {
-        Intent intent = new Intent(this , ButterflyMenu.class);
 
     }
-   /* private void loadSounds() {
 
-        AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                .setUsage(AudioAttributes.USAGE_GAME)
-                .build();
-
-        soundPool = new SoundPool.Builder()
-                .setMaxStreams(1)
-                .setAudioAttributes(audioAttributes)
-                .build();
-
-        sound = soundPool.load(this, R.raw.blop_sound, 1);
-
-    }*/
 
     private void addButterflies() {
 
@@ -269,11 +277,7 @@ public class AR_Main extends AppCompatActivity  {
         AnimationData animationData = renderable.getAnimationData(i);
         modelAnimator = new ModelAnimator(animationData, renderable);
         modelAnimator.start();
-        i++;
+        onResume(renderable);
 
-        if(i==0)
-        {
-            animateModel(renderable);
-        }
     }
 }
