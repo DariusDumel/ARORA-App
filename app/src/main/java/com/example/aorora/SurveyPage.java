@@ -61,8 +61,8 @@ public class SurveyPage extends AppCompatActivity implements OnClickListener {
         question_order_count = 0;
         survey_question_tv.setText(questions[question_order_count]);
         surveyPage = this;
-        mood_desc_ll = findViewById(R.id.mood_desc_ll);
-        mood_desc_stress = findViewById(R.id.mood_desc_stress);
+        //mood_desc_ll = findViewById(R.id.mood_desc_ll);
+        //mood_desc_stress = findViewById(R.id.mood_desc_stress);
         exitButton =  findViewById(R.id.exit_button_survey);
 
         mood_desc_ll.setVisibility(View.INVISIBLE);
