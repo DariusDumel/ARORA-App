@@ -55,7 +55,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/ic_launcher_background"
-        android:background="@drawable/arouraicon" />
+        android:background="@drawable/araurora" />
 
 
 
@@ -66,13 +66,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="175dp"
         android:layout_marginTop="650dp"
-        android:background="@drawable/basket" />
+        android:background="@drawable/argive" />
 
     <Button
         android:id="@+id/Message"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="100dp"
-        android:background="@drawable/messages" />
+        android:background="@drawable/armessage" />
 
 </RelativeLayout>
