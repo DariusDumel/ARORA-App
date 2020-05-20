@@ -68,16 +68,15 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
         homeScreen = this;
         isButtonsPoppedUp = false;
         home_button_bottombar = (ImageButton) findViewById(R.id.home_button_bottom_bar);
-        home_button_bottombar.setImageResource(R.drawable.home_button_filled);
         profile_button_bottombar = (ImageButton) findViewById(R.id.profile_button_bottom_bar);
         community_button_bottombar = (ImageButton) findViewById(R.id.community_button_bottom_bar);
         quest_button_bottombar = (ImageButton) findViewById(R.id.quest_button_bottom_bar);
         ar_game_button = (ImageButton) findViewById(R.id.ar_game_button);
         quest_button = (ImageButton) findViewById(R.id.quest_breathing_button);
-        pop_up_twobuttons_button = findViewById(R.id.pop_up_buttons_button);
+       // pop_up_twobuttons_button = findViewById(R.id.pop_up_buttons_button);
         profile_butterfly = (ImageView) findViewById(R.id.user_butterfly_imageView);
         label_ar_game_button = (TextView) findViewById(R.id.label_ar_button);
-        label_quest_button = (TextView) findViewById(R.id.label_quest_button);
+//        label_quest_button = (TextView) findViewById(R.id.label_quest_button);
         popup_quick_access = (LinearLayout) findViewById(R.id.popup_quick_access);
         speck_holder_cl = (ConstraintLayout) findViewById(R.id.speck_holder_cl);
         quick_menu = (LinearLayout) findViewById(R.id.include_popup_quick_access_menu);
@@ -111,7 +110,7 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
                 buttonClick = MediaPlayer.create(getBaseContext(), R.raw.button1);
                 */
 
-                ImageView popup_quick_acces_image = (ImageView) popup_quick_access.findViewById(R.id.pollen_score_layout_imageview);
+                /*ImageView popup_quick_acces_image = (ImageView) popup_quick_access.findViewById(R.id.pollen_score_layout_imageview);
                 if(is_menu_inflated)
                 {
                     popup_quick_access.findViewById(R.id.pollen_score_layout_tv).setVisibility(View.VISIBLE);
@@ -133,7 +132,7 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
                     block1
                     View block2 = quick_menu.findViewById(R.id.quick_access_block_1);
                     View block3 = quick_menu.findViewById(R.id.quick_access_block_1);
-                    */
+
                     is_menu_inflated = true;
                 }
                 /*
@@ -148,29 +147,7 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
 
             }
         });
-        switch (MainActivity.user_info.getUser_current_butterfly()){
-            case 0:
-                profile_butterfly.setImageResource(R.drawable.orange_butterfly_image);
-                break;
-            case 1:
-                profile_butterfly.setImageResource(R.drawable.blue_butterfly_image);
-                break;
-            case 2:
-                profile_butterfly.setImageResource(R.drawable.red_butterfly_image);
-                break;
-            case 3:
-                profile_butterfly.setImageResource(R.drawable.green_butterfly_image);
-                break;
-            case 4:
-                profile_butterfly.setImageResource(R.drawable.yellow_butterfly_image);
-                break;
-            case 5:
-                profile_butterfly.setImageResource(R.drawable.purple_butterfly_image);
-                break;
-            default:
-                profile_butterfly.setImageResource(R.drawable.orange_butterfly_image);
-                break;
-        }
+
         gestureDetector = new GestureDetector(homeScreen, HomeScreen.this);
         notification_tv = (TextView) findViewById(R.id.notification_body_homescreen);
         myVibrate = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -233,7 +210,7 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
 
             }
         });
-
+/*
         pop_up_twobuttons_button.setOnClickListener(new ImageButton.OnClickListener() {
             public void onClick(View v) {
 
@@ -259,7 +236,7 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
                     quest_button.setClickable(FALSE);
                 }
             }
-        });
+        });*/
 
         /*
         new CountDownTimer(10000, 100) {

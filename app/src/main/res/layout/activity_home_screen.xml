@@ -16,53 +16,40 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.26" />
 
-    <include
-        android:id="@+id/include_popup_quick_access_menu"
-        layout="@layout/quick_access_menu"
-        android:layout_width="355dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+    <TextView
+        android:id="@+id/notification_body_homescreen"
+        android:layout_width="297dp"
+        android:layout_height="58dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/notifications_sidebar"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="@string/quest_notification"
+        android:textColor="#FFFFFF"
+        android:textSize="6pt"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/user_butterfly_imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="234dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_main_large_icon" />
+        <include
+            android:id="@+id/include_popup_quick_access_menu"
+            layout="@layout/quick_access_menu"
+            android:layout_width="355dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="invisible" />
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/bottom_menu_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/ar_game_button_ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="47dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintHorizontal_bias="0.711"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_butterfly_imageView">
 
@@ -86,19 +73,45 @@
             android:visibility="visible" />
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/user_butterfly_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="234dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_main_large_icon" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/bottom_menu_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
     <LinearLayout
         android:id="@+id/quest_breathing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="76dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/quest_walking"
-        app:layout_constraintVertical_bias="0.6">
+        app:layout_constraintVertical_bias="0.31">
 
         <ImageButton
             android:id="@+id/quest_breathing_button"
@@ -126,15 +139,13 @@
         android:id="@+id/quest_Meditation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="55dp"
+        android:layout_marginTop="56dp"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/include"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.565"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ar_game_button_ll"
-        app:layout_constraintVertical_bias="0.618">
+        app:layout_constraintTop_toBottomOf="@+id/ar_game_button_ll">
 
         <ImageButton
             android:id="@+id/quest_meditation_button"
@@ -161,11 +172,10 @@
         android:id="@+id/quest_walking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="47dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.429"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/user_butterfly_imageView">
 
@@ -190,22 +200,14 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/notification_body_homescreen"
-        android:layout_width="297dp"
-        android:layout_height="58dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/notifications_sidebar"
-        android:gravity="center_horizontal"
-        android:padding="10dp"
-        android:text="@string/quest_notification"
-        android:textColor="#FFFFFF"
-        android:textSize="6pt"
-        android:visibility="invisible"
+    <LinearLayout
+        android:id="@+id/popup_quick_access"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent">
+    </LinearLayout>
 
     <android.support.constraint.Barrier
         android:id="@+id/barrier"
