@@ -4,10 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/atrium_bg"
+    android:background="@drawable/pagebackground"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="com.terminus.AR_Aroura.MainActivity"
+    tools:context="com.example.aorora.ButterflyMenu"
     android:padding="8dp">
 
     <TextView
