@@ -1,17 +1,10 @@
 package com.example.aorora;
 
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.media.MediaPlayer;
-import android.os.Build;
-import android.os.CountDownTimer;
-import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.support.annotation.DrawableRes;
 import android.support.constraint.ConstraintLayout;
-import android.support.constraint.ConstraintSet;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
@@ -20,17 +13,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Random;
-
-import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
 
 public class HomeScreen extends AppCompatActivity implements GestureDetector.OnGestureListener, View.OnClickListener {
     Context homeScreen;
@@ -40,7 +27,9 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
     ImageButton community_button_bottombar;
     ImageButton quest_button_bottombar;
     ImageButton ar_game_button;
-    ImageButton quest_button;
+    ImageButton quest_walking_button;
+    ImageButton quest_breathing_button;
+    ImageButton quest_meditation_button;
     ImageButton pop_up_twobuttons_button;
     TextView notification_tv;
     TextView label_ar_game_button;
@@ -72,7 +61,9 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
         community_button_bottombar = (ImageButton) findViewById(R.id.community_button_bottom_bar);
         quest_button_bottombar = (ImageButton) findViewById(R.id.quest_button_bottom_bar);
         ar_game_button = (ImageButton) findViewById(R.id.ar_game_button);
-        quest_button = (ImageButton) findViewById(R.id.quest_breathing_button);
+        quest_walking_button = (ImageButton) findViewById(R.id.quest_walking_button);
+        quest_breathing_button = (ImageButton) findViewById(R.id.quest_breathing_button);
+        quest_meditation_button = (ImageButton) findViewById(R.id.quest_meditation_button);
         profile_butterfly = (ImageView) findViewById(R.id.user_butterfly_imageView);
         label_ar_game_button = (TextView) findViewById(R.id.label_ar_button);
         popup_quick_access = (LinearLayout) findViewById(R.id.popup_quick_access);
@@ -156,8 +147,10 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
         profile_button_bottombar.setOnClickListener(this);
         community_button_bottombar.setOnClickListener(this);
         quest_button_bottombar.setOnClickListener(this);
-        quest_button.setOnClickListener(this);
         ar_game_button.setOnClickListener(this);
+        quest_walking_button.setOnClickListener(this);
+        quest_meditation_button.setOnClickListener(this);
+        quest_breathing_button.setOnClickListener(this);
         notification_tv.setOnClickListener(this);
         speck1.setOnClickListener(this);
         notification_tv.setVisibility(View.INVISIBLE);
@@ -335,13 +328,6 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
             to_navigate = new Intent(homeScreen, CommunityPage.class);
             startActivity(to_navigate);
         }
-        else if(view_id == quest_button_bottombar.getId() || view_id == quest_button.getId())
-        {
-
-            to_navigate = new Intent(homeScreen, MindfullnessSelection.class);
-            startActivity(to_navigate);
-
-        }
         else if(view_id == home_button_bottombar.getId())
 
         {
@@ -361,6 +347,21 @@ public class HomeScreen extends AppCompatActivity implements GestureDetector.OnG
         else if(view_id == ar_game_button.getId())
         {
             to_navigate = new Intent(homeScreen, AR_Main.class);
+            startActivity(to_navigate);
+        }
+        else if(view_id == quest_breathing_button.getId())
+        {
+            to_navigate = new Intent(homeScreen, MindfullnessBreathing.class);
+            startActivity(to_navigate);
+        }
+        else if(view_id == quest_meditation_button.getId())
+        {
+            to_navigate = new Intent(homeScreen, MindfullnessMeditation.class);
+            startActivity(to_navigate);
+        }
+        else if(view_id == quest_walking_button.getId())
+        {
+            to_navigate = new Intent(homeScreen, MindfullnessWalking.class);
             startActivity(to_navigate);
         }
 

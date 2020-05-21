@@ -44,29 +44,7 @@ public class MindfullnessSelection extends AppCompatActivity implements View.OnC
         mindfulness_selection_view = findViewById(R.id.mindfulness_selection_view);
         gestureDetector = new GestureDetector(mindfullnessSelection, MindfullnessSelection.this);
         mindfulness_selection_view.setOnTouchListener(touchListener);
-        switch (MainActivity.user_info.getUser_current_butterfly()){
-            case 0:
-                butterfly_view.setImageResource(R.drawable.orange_butterfly_image);
-                break;
-            case 1:
-                butterfly_view.setImageResource(R.drawable.blue_butterfly_image);
-                break;
-            case 2:
-                butterfly_view.setImageResource(R.drawable.red_butterfly_image);
-                break;
-            case 3:
-                butterfly_view.setImageResource(R.drawable.green_butterfly_image);
-                break;
-            case 4:
-                butterfly_view.setImageResource(R.drawable.yellow_butterfly_image);
-                break;
-            case 5:
-                butterfly_view.setImageResource(R.drawable.purple_butterfly_image);
-                break;
-            default:
-                butterfly_view.setImageResource(R.drawable.orange_butterfly_image);
-                break;
-        }
+
 
         home_button_bottombar.setOnClickListener(this);
         profile_button_bottombar.setOnClickListener(this);

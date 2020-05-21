@@ -100,21 +100,19 @@
 
 
     <LinearLayout
-        android:id="@+id/quest_breathing"
+        android:id="@+id/quest_walking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
+        android:layout_marginTop="56dp"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/quest_walking"
-        app:layout_constraintVertical_bias="0.316">
+        app:layout_constraintTop_toBottomOf="@+id/quest_breathing">
 
         <ImageButton
-            android:id="@+id/quest_breathing_button"
+            android:id="@+id/quest_walking_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00000000"
@@ -136,7 +134,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/quest_Meditation"
+        android:id="@+id/quest_meditation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -169,7 +167,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/quest_walking"
+        android:id="@+id/quest_breathing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="47dp"
@@ -180,7 +178,7 @@
         app:layout_constraintTop_toBottomOf="@+id/user_butterfly_imageView">
 
         <ImageButton
-            android:id="@+id/quest_walking_button"
+            android:id="@+id/quest_breathing_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00000000"

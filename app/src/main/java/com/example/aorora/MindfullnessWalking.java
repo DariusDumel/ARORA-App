@@ -105,7 +105,7 @@ public class MindfullnessWalking extends AppCompatActivity implements View.OnCli
         }
         else if(view_id == quest_button_bottombar.getId())
         {
-            to_navigate = new Intent(mindfullnessWalking, MindfullnessSelection.class);
+            to_navigate = new Intent(mindfullnessWalking, HomeScreen.class);
         }
         else if(view_id == home_button_bottombar.getId())
         {
@@ -119,7 +119,7 @@ public class MindfullnessWalking extends AppCompatActivity implements View.OnCli
         }
         else if(view_id == exit_button.getId())
         {
-            to_navigate = new Intent(mindfullnessWalking, MindfullnessSelection.class);
+            to_navigate = new Intent(mindfullnessWalking, HomeScreen.class);
             startActivity(to_navigate);
         }
         else if(view_id == play.getId())

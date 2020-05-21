@@ -159,7 +159,7 @@ public class MindfullnessBreathing extends AppCompatActivity implements View.OnC
         }
         else if(view_id == quest_button_bottombar.getId())
         {
-            to_navigate = new Intent(mindfullnessBreathing, MindfullnessSelection.class);
+            to_navigate = new Intent(mindfullnessBreathing, HomeScreen.class);
         }
         else if(view_id == home_button_bottombar.getId())
         {
@@ -180,7 +180,7 @@ public class MindfullnessBreathing extends AppCompatActivity implements View.OnC
         }
         else if(view_id == exit_button.getId())
         {
-            to_navigate = new Intent(mindfullnessBreathing, MindfullnessSelection.class);
+            to_navigate = new Intent(mindfullnessBreathing, HomeScreen.class);
             startActivity(to_navigate);
         }
     }
